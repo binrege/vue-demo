@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[1,2,3,4,5]
+        //循环
+        arr.map((item,index,arr) => {
+            console.log(item);
+            console.log(index);
+            console.log(arr);
+
+        })
+        //过滤
+        let arr1=arr.filter(() => {
+            return item>2;
+        })
+        console.log(arr1);
+        console.log(arr);
+        //every
+        let every=arr.every(() =>{
+            return item>0;
+        })
+        console.log(every);
+        //some
+        let some=arr.some(() =>{
+            return item>2;
+        })
+        console.log(some);
+        //定义一个对象
+        let obj={
+            name:'leibin',
+            age:20
+        }
+        console.log(obj.name);
+        obj.sex='男';
+        let num=10;
+        //本地永久存储
+        localStorage.setItem('num',num);
+        //获取
+        let num1=localStorage.getItem('num');
+
+        //把对象转成字符串
+        localStorage.setItem('obj',JSON.stringify(obj));
+        //把字符串转成对象
+        let obj1=JSON.parse(localStorage.getItem('obj'));
+        //单个移除
+        localStorage.removeItem('num');
+        //移除所有
+        localStorage.clear();
+        console.log(obj1);
+    </script>
+</body>
+</html>
